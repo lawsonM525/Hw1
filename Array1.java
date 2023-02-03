@@ -9,7 +9,7 @@ public class Array1 {
      */
     public static void printArray(int[] array){
         for(int i=0; i< array.length; i++){
-            System.out.print(i+" ");
+            System.out.print(array[i]+" ");
         }
         System.out.println(" ");
     }
@@ -74,7 +74,6 @@ public class Array1 {
     public static int addAll(int[] array){
         int sum = 0;
         for(int i=0; i<array.length; i++){ //loops through array and adds each element to sum
-            System.out.println(sum);
             sum = sum + array[i];
         }
         return sum;
@@ -89,7 +88,6 @@ public class Array1 {
         printArray(arr);
         System.out.println("The result of the sum of the array:");
         System.out.println(addAll(arr));
-        printArray(arr);
     }
 
     /**
@@ -114,11 +112,11 @@ public class Array1 {
     public static void test_addArrays(int[] array1, int[] array2){
         System.out.println("Testing addArrays on the following arrays");
         System.out.println("Array 1:");
-        Helpers.printArray(array1);
+        printArray(array1);
         System.out.println("Array 2:");
-        Helpers.printArray(array2);
+        printArray(array2);
         System.out.println("The result of the sum of the arrays:");
-        Helpers.printArray(addArrays(array1, array2));
+        printArray(addArrays(array1, array2));
     }
 
     /**
@@ -140,7 +138,7 @@ public class Array1 {
      */
     public static void test_multiplyAll(int[] array){
         System.out.println("Testing multiplyAll on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the product of the array:");
         System.out.println(multiplyAll(array));
     }
@@ -160,7 +158,7 @@ public class Array1 {
      */
     public static void test_findAverage(int[] array){
         System.out.println("Testing average on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the average of the array:");
         System.out.println(findAverage(array));
     }
@@ -185,11 +183,11 @@ public class Array1 {
      */
     public static void test_swap(int[] array, int index1, int index2){
         System.out.println("Testing swap on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("Swapping index "+index1+" with index "+index2);
         swap(array, index1, index2);
         System.out.println("The result of the swap:");
-        Helpers.printArray(array);
+        printArray(array);
     }
 
     /**
@@ -213,6 +211,8 @@ public class Array1 {
      */
     public static void test_isElement(int[] array){
         int value = array[0];
+        System.out.println("Testing isElement on the following array");
+        printArray(array);
         System.out.println("Testing isElement on value: "+ value);
         System.out.println("Result from isElement: " + isElement(array,value));
         System.out.println("Testing isElement on value: "+ "1000");
@@ -240,6 +240,8 @@ public class Array1 {
      */
     public static void test_indexOf(int[] array){
         int element = array[0];
+        System.out.println("Testing indexOf on the following array");
+        printArray(array);
         System.out.println("Testing indexOf on element: "+ element);
         System.out.println("Result from indexOf: " + indexOf(array,element));
         System.out.println("Testing indexOf on element: "+ "1000");
@@ -267,7 +269,7 @@ public class Array1 {
      */
     public static void test_findMin(int[] array){
         System.out.println("Testing findMin on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the smallest element in the array:");
         System.out.println(findMin(array));
     }
@@ -295,7 +297,7 @@ public class Array1 {
      */
     public static void test_findMinIndex(int[] array){
         System.out.println("Testing findMinIndex on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the index of the smallest element in the array:");
         System.out.println(findMinIndex(array));
     }
@@ -321,7 +323,7 @@ public class Array1 {
      */
     public static void test_findMax(int[] array){
         System.out.println("Testing findMax on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the largest element in the array:");
         System.out.println(findMax(array));
     }
@@ -349,7 +351,7 @@ public class Array1 {
      */
     public static void test_findMaxIndex(int[] array){
         System.out.println("Testing findMaxIndex on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the index of the largest element in the array:");
         System.out.println(findMaxIndex(array));
     }
@@ -370,10 +372,10 @@ public class Array1 {
      */
     public static void test_reverseInPlace(int[] array){
         System.out.println("Testing reverseInPlace on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         reverseInPlace(array);
         System.out.println("The result of the array after reversing it:");
-        Helpers.printArray(array);
+        printArray(array);
     }
 
     /**
@@ -395,9 +397,9 @@ public class Array1 {
      */
     public static void test_reverse(int[] array){
         System.out.println("Testing reverse on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         System.out.println("The result of the reversed array:");
-        Helpers.printArray(reverse(array));
+        printArray(reverse(array));
     }
 
     /**
@@ -433,10 +435,10 @@ public class Array1 {
      */
     public static void test_intersect(int[] array1, int[] array2){
         System.out.println("Testing intersect on the following arrays");
-        Helpers.printArray(array1);
-        Helpers.printArray(array2);
+        printArray(array1);
+        printArray(array2);
         System.out.println("The result of the intersecting elements between the two arrays:");
-        Helpers.printArray(intersect(array1, array2));
+        printArray(intersect(array1, array2));
     }
 
     /**
@@ -474,10 +476,10 @@ public class Array1 {
      */
     public static void test_union(int[] array1, int[] array2){
         System.out.println("Testing union on the following arrays");
-        Helpers.printArray(array1);
-        Helpers.printArray(array2);
+        printArray(array1);
+        printArray(array2);
         System.out.println("The result of the union of the two arrays:");
-        Helpers.printArray(union(array1, array2));
+        printArray(union(array1, array2));
     }
 
     /**
@@ -500,10 +502,10 @@ public class Array1 {
      */
     public static void test_sort(int[] array){
         System.out.println("Testing sort on the following array");
-        Helpers.printArray(array);
+        printArray(array);
         sort(array);
         System.out.println("The result of the sorted array:");
-        Helpers.printArray(array);
+        printArray(array);
     }
     
 
@@ -517,47 +519,45 @@ public class Array1 {
         // something small
         // something big
         // something random
-        int[] array = newArray(5);
+        int[] array = newArray(7);
         int[] array2 = newRandArray(7, 10);
 
 
 
         //Calling testers
-        test_copy(array);
+        test_copy(array2);
         System.out.println("--------------------");
-        printArray(array);
-        printArray(array2);
-        test_addAll(array2);
-        // System.out.println("--------------------");
-        // test_addArrays(array, array2);
-        // System.out.println("--------------------");
-        // test_multiplyAll(array);
-        // System.out.println("--------------------");
-        // test_findAverage(array);
-        // System.out.println("--------------------");
-        // test_swap(array, 0, array.length-2);
-        // System.out.println("--------------------");
-        // test_isElement(array);
-        // System.out.println("--------------------");
-        // test_indexOf(array);
-        // System.out.println("--------------------");
-        // test_findMin(array);
-        // System.out.println("--------------------");
-        // test_findMinIndex(array);
-        // System.out.println("--------------------");
-        // test_findMax(array);
-        // System.out.println("--------------------");
-        // test_findMaxIndex(array);
-        // System.out.println("--------------------");
-        // test_reverse(array);
-        // System.out.println("--------------------");
-        // test_reverseInPlace(array);
-        // System.out.println("--------------------");
-        // test_intersect(array, array2);
-        // System.out.println("--------------------");
-        // test_union(array, array2);
-        // System.out.println("--------------------");
-        // test_sort(array2);
+        test_addAll(array);
+        System.out.println("--------------------");
+        test_addArrays(array, array2);
+        System.out.println("--------------------");
+        test_multiplyAll(array);
+        System.out.println("--------------------");
+        test_findAverage(array);
+        System.out.println("--------------------");
+        test_swap(array, 0, array.length-3);
+        System.out.println("--------------------");
+        test_isElement(array2);
+        System.out.println("--------------------");
+        test_indexOf(array2);
+        System.out.println("--------------------");
+        test_findMin(array2);
+        System.out.println("--------------------");
+        test_findMinIndex(array2);
+        System.out.println("--------------------");
+        test_findMax(array2);
+        System.out.println("--------------------");
+        test_findMaxIndex(array2);
+        System.out.println("--------------------");
+        test_reverse(array);
+        System.out.println("--------------------");
+        test_reverseInPlace(array);
+        System.out.println("--------------------");
+        test_intersect(array, array2);
+        System.out.println("--------------------");
+        test_union(array, array2);
+        System.out.println("--------------------");
+        test_sort(array2);
         System.out.println("Thank you and have a great day! :)");
     }
 }
