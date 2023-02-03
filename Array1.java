@@ -1,5 +1,44 @@
-public class Testers {
+import java.util.Random;
+
+public class Array1 {
+
+    //1. Helper Functions
+    /**
+     * prints all ements within array on terminal
+     * @param array to be printed out
+     */
+    public static void printArray(int[] array){
+        for(int i=0; i< array.length; i++){
+            System.out.print(i+" ");
+        }
+        System.out.println(" ");
+    }
+
+    /**
+     * creates an array with a continuous range from 0 to the max-1
+     * @param max maximum number in range for array
+     * @return int array with range
+     */
+    public static int[] newArray(int max){
+        int[] array = new int[max];
+        for (int i=0; i<max; i++){
+            array[i] = i;
+        }
+        return array;
+    } 
+
+    /* Creates an integer array of a given where each element is between 0 and max */
+    public static int[] newRandArray(int size, int max){
+        Random random = new Random();//initialize random number generator
+        int[] array = new int[size];
+        for (int i = 0; i< array.length; i++) {
+            array[i] = random.nextInt(max);//generate a random integer in the range 0 to max
+        }
+        return array;
+    }
     
+    //2. Homework Functions for int arrays
+
     /**
      * Copies an array
      * @param array array to be copied
@@ -19,9 +58,12 @@ public class Testers {
      */
     public static void test_copy(int[] array){
         System.out.println("Testing copy on the following array");
-        Helpers.printArray(array);
+        printArray(array);
+        System.out.println("The memory location of the array is "+array);
         System.out.println("The result of the copied array:");
-        Helpers.printArray(copy(array));
+        int[] newArr = copy(array);
+        printArray(newArr);
+        System.out.println("The memory location of the copy is "+newArr);
     }
 
     /**
@@ -32,20 +74,22 @@ public class Testers {
     public static int addAll(int[] array){
         int sum = 0;
         for(int i=0; i<array.length; i++){ //loops through array and adds each element to sum
-            sum += array[i];
+            System.out.println(sum);
+            sum = sum + array[i];
         }
         return sum;
     }
 
     /**
      * Tests the addAll function
-     * @param array array to be added
+     * @param arr array to be added
      */
-    public static void test_addAll(int[] array){
+    public static void test_addAll(int[] arr){
         System.out.println("Testing addAll on the following array");
-        Helpers.printArray(array);
+        printArray(arr);
         System.out.println("The result of the sum of the array:");
-        System.out.println(addAll(array));
+        System.out.println(addAll(arr));
+        printArray(arr);
     }
 
     /**
@@ -147,7 +191,6 @@ public class Testers {
         System.out.println("The result of the swap:");
         Helpers.printArray(array);
     }
-
 
     /**
      * checks if an array contains a value
@@ -316,11 +359,8 @@ public class Testers {
      * @param array array to be reversed
      */
     public static void reverseInPlace(int[] array){
-        int temp;
         for(int i=0; i<array.length/2; i++){
-            temp = array[i];//sets temp to element at index i
-            array[i] = array[array.length-1-i];//sets element at index i to element at index array.length-1-i
-            array[array.length-1-i] = temp;//sets element at index array.length-1-i to temp
+            swap(array, i, array.length-1-i);
         }
     }
 
@@ -367,15 +407,21 @@ public class Testers {
      * @return int[] array of elements that intersect between the two arrays
      */
     public static int[] intersect(int[] array1, int[] array2){
-        int[] intersect = new int[array1.length];
+        int[] temp = new int[array1.length];
         int count = 0;
         for(int i=0; i<array1.length; i++){
             for(int j=0; j<array2.length; j++){
                 if(array1[i] == array2[j]){//checks if element at index i in array1 is equal to element at index j in array2
-                    intersect[count] = array1[i];//sets element at index count in intersect to element at index i in array1
-                    count++;//increments count
+                    if(isElement(temp, array1[i])==false){
+                        temp[count] = array1[i];//sets element at index count in intersect to element at index i in array1
+                        count++;//increments count
+                    }
                 }
             }
+        }
+        int[] intersect = new int[count];
+        for(int i=0; i<intersect.length; i++){
+            intersect[i] = temp[i];//adds all newly added intersection elements in temp to intersect
         }
         return intersect;
     }
@@ -403,12 +449,16 @@ public class Testers {
         int[] union = new int[array1.length+array2.length];
         int count = 0;
         for(int i=0; i<array1.length; i++){
-            union[count] = array1[i];//sets element at index count in union to element at index i in array1
-            count++;//increments count
+            if(isElement(union, array1[i])==false){
+                union[count] = array1[i];//sets element at index count in union to element at index i in array1
+                count++;//increments count
+            }
         }
         for(int i=0; i<array2.length; i++){
-            union[count] = array2[i];//sets element at index count in union to element at index i in array2
-            count++;//increments count
+            if(isElement(union, array2[i])==false){
+                union[count] = array2[i];//sets element at index count in union to element at index i in array2
+                count++;//increments count
+            }
         }
         int[] union2 = new int[count];
         for(int i=0; i<count; i++){
@@ -457,52 +507,57 @@ public class Testers {
     }
     
 
+    //Main Function
     public static void main(String[] args){
-        //Making an array for testing
-        int[] array = new int[25];
-        for (int i=0; i<array.length; i++){
-            array[i] = i+1;
-        }
-        //Making a second array for testing
-        int[] array2 = new int[25];
-        for (int i=0; i<array2.length; i++){
-            array2[i] = i+30;
-        }
+        System.out.println("PROGRAM START!");
+        System.out.println("=================");
+        System.out.println(" ");
+
+        //make helper functions to make arrays
+        // something small
+        // something big
+        // something random
+        int[] array = newArray(5);
+        int[] array2 = newRandArray(7, 10);
+
+
 
         //Calling testers
         test_copy(array);
         System.out.println("--------------------");
+        printArray(array);
+        printArray(array2);
         test_addAll(array2);
-        System.out.println("--------------------");
-        test_addArrays(array, array2);
-        System.out.println("--------------------");
-        test_multiplyAll(array);
-        System.out.println("--------------------");
-        test_findAverage(array);
-        System.out.println("--------------------");
-        test_swap(array, 0, 24);
-        System.out.println("--------------------");
-        test_isElement(array);
-        System.out.println("--------------------");
-        test_indexOf(array2);
-        System.out.println("--------------------");
-        test_findMin(array2);
-        System.out.println("--------------------");
-        test_findMinIndex(array);
-        System.out.println("--------------------");
-        test_findMax(array);
-        System.out.println("--------------------");
-        test_findMaxIndex(array2);
-        System.out.println("--------------------");
-        test_reverse(array);
-        System.out.println("--------------------");
-        test_reverseInPlace(array2);
-        System.out.println("--------------------");
-        test_intersect(array, array2);
-        System.out.println("--------------------");
-        test_union(array, array2);
-        System.out.println("--------------------");
-        test_sort(array);
+        // System.out.println("--------------------");
+        // test_addArrays(array, array2);
+        // System.out.println("--------------------");
+        // test_multiplyAll(array);
+        // System.out.println("--------------------");
+        // test_findAverage(array);
+        // System.out.println("--------------------");
+        // test_swap(array, 0, array.length-2);
+        // System.out.println("--------------------");
+        // test_isElement(array);
+        // System.out.println("--------------------");
+        // test_indexOf(array);
+        // System.out.println("--------------------");
+        // test_findMin(array);
+        // System.out.println("--------------------");
+        // test_findMinIndex(array);
+        // System.out.println("--------------------");
+        // test_findMax(array);
+        // System.out.println("--------------------");
+        // test_findMaxIndex(array);
+        // System.out.println("--------------------");
+        // test_reverse(array);
+        // System.out.println("--------------------");
+        // test_reverseInPlace(array);
+        // System.out.println("--------------------");
+        // test_intersect(array, array2);
+        // System.out.println("--------------------");
+        // test_union(array, array2);
+        // System.out.println("--------------------");
+        // test_sort(array2);
         System.out.println("Thank you and have a great day! :)");
     }
 }
