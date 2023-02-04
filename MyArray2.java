@@ -412,7 +412,7 @@ public class MyArray2{
      * @param array2 second array to be checked
      * @return int[] array of elements that intersect between the two arrays
      */
-    public static int[] intersect(int[] array1, int[] array2){
+    public static int[] intersection(int[] array1, int[] array2){
         int[] temp = new int[array1.length];
         int count = 0;
         for(int i=0; i<array1.length; i++){
@@ -424,6 +424,10 @@ public class MyArray2{
                     }
                 }
             }
+        }
+        if(isElement(array1, 0)==true||isElement(array2,0)==true){
+            temp[count] = 0;
+            count++;
         }
         int[] intersect = new int[count];
         for(int i=0; i<intersect.length; i++){
@@ -437,12 +441,12 @@ public class MyArray2{
      * @param array1 first array to be checked
      * @param array2 second array to be checked
      */
-    // public static void test_intersect(int[] array1, int[] array2){
+    // public static void test_intersection(int[] array1, int[] array2){
     //     System.out.println("Testing intersect on the following arrays");
     //     printArray(array1);
     //     printArray(array2);
     //     System.out.println("The result of the intersecting elements between the two arrays:");
-    //     printArray(intersect(array1, array2));
+    //     printArray(intersection(array1, array2));
     // }
 
     /**
@@ -465,6 +469,10 @@ public class MyArray2{
                 union[count] = array2[i];//sets element at index count in union to element at index i in array2
                 count++;//increments count
             }
+        }
+        if(isElement(array1, 0)==true||isElement(array2,0)==true){
+            temp[count] = 0;
+            count++;
         }
         int[] union2 = new int[count];
         for(int i=0; i<count; i++){
@@ -557,7 +565,7 @@ public class MyArray2{
         // System.out.println("--------------------");
         // test_returnReverse(array);
         // System.out.println("--------------------");
-        // test_intersect(array, array2);
+        // test_intersection(array, array2);
         // System.out.println("--------------------");
         // test_union(array, array2);
         // System.out.println("--------------------");
