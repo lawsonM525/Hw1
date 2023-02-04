@@ -1,6 +1,7 @@
 import java.util.Random;
 
-public class Array1 {
+
+public class MyArray2 {
 
     //1. Helper Functions
     /**
@@ -360,7 +361,7 @@ public class Array1 {
      * reverse an array in-place
      * @param array array to be reversed
      */
-    public static void reverseInPlace(int[] array){
+    public static void reverse(int[] array){
         for(int i=0; i<array.length/2; i++){
             swap(array, i, array.length-1-i);
         }
@@ -370,10 +371,10 @@ public class Array1 {
      * Tests the reverseInPlace function
      * @param array array to be reversed
      */
-    public static void test_reverseInPlace(int[] array){
-        System.out.println("Testing reverseInPlace on the following array");
+    public static void test_reverse(int[] array){
+        System.out.println("Testing reverse on the following array");
         printArray(array);
-        reverseInPlace(array);
+        reverse(array);
         System.out.println("The result of the array after reversing it:");
         printArray(array);
     }
@@ -383,7 +384,7 @@ public class Array1 {
      * @param array array to be reversed
      * @return int[] reversed array
      */
-    public static int[] reverse(int[] array){
+    public static int[] returnReverse(int[] array){
         int[] reversed = new int[array.length];
         for(int i=0; i<array.length; i++){
             reversed[i] = array[array.length-1-i];//sets element at index i to element at index array.length-1-i
@@ -395,11 +396,11 @@ public class Array1 {
      * Tests the reverse function
      * @param array array to be reversed
      */
-    public static void test_reverse(int[] array){
-        System.out.println("Testing reverse on the following array");
+    public static void test_returnReverse(int[] array){
+        System.out.println("Testing returnReverse on the following array");
         printArray(array);
         System.out.println("The result of the reversed array:");
-        printArray(reverse(array));
+        printArray(returnReverse(array));
     }
 
     /**
@@ -551,7 +552,7 @@ public class Array1 {
         System.out.println("--------------------");
         test_reverse(array);
         System.out.println("--------------------");
-        test_reverseInPlace(array);
+        test_returnReverse(array);
         System.out.println("--------------------");
         test_intersect(array, array2);
         System.out.println("--------------------");
