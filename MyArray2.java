@@ -60,15 +60,15 @@ public class MyArray2{
      * Tests the copy function
      * @param array array to be copied
      */
-    // public static void test_copy(int[] array){
-    //     System.out.println("Testing copy on the following array");
-    //     printArray(array);
-    //     System.out.println("The memory location of the array is "+array);
-    //     System.out.println("The result of the copied array:");
-    //     int[] newArr = copy(array);
-    //     printArray(newArr);
-    //     System.out.println("The memory location of the copy is "+newArr);
-    // }
+    public static void test_copy(int[] array){
+        System.out.println("Testing copy on the following array");
+        printArray(array);
+        System.out.println("The memory location of the array is "+array);
+        System.out.println("The result of the copied array:");
+        int[] newArr = copy(array);
+        printArray(newArr);
+        System.out.println("The memory location of the copy is "+newArr);
+    }
 
     /**
      * adds all elements within an array
@@ -87,12 +87,12 @@ public class MyArray2{
      * Tests the addAll function
      * @param arr array to be added
      */
-    // public static void test_addAll(int[] arr){
-    //     System.out.println("Testing addAll on the following array");
-    //     printArray(arr);
-    //     System.out.println("The result of the sum of the array:");
-    //     System.out.println(addAll(arr));
-    // }
+    public static void test_addAll(int[] arr){
+        System.out.println("Testing addAll on the following array");
+        printArray(arr);
+        System.out.println("The result of the sum of the array:");
+        System.out.println(addAll(arr));
+    }
 
     /**
      * adds the elements of two arrays
@@ -113,15 +113,15 @@ public class MyArray2{
      * @param array1 first array to be added
      * @param array2 second array to be added
      */
-    // public static void test_addArrays(int[] array1, int[] array2){
-    //     System.out.println("Testing addArrays on the following arrays");
-    //     System.out.println("Array 1:");
-    //     printArray(array1);
-    //     System.out.println("Array 2:");
-    //     printArray(array2);
-    //     System.out.println("The result of the sum of the arrays:");
-    //     printArray(addArrays(array1, array2));
-    // }
+    public static void test_addArrays(int[] array1, int[] array2){
+        System.out.println("Testing addArrays on the following arrays");
+        System.out.println("Array 1:");
+        printArray(array1);
+        System.out.println("Array 2:");
+        printArray(array2);
+        System.out.println("The result of the sum of the arrays:");
+        printArray(addArrays(array1, array2));
+    }
 
     /**
      * multiplies all elements within an array
@@ -140,12 +140,12 @@ public class MyArray2{
      * Tests the multiplyAll function
      * @param array array to be multiplied
      */
-    // public static void test_multiplyAll(int[] array){
-    //     System.out.println("Testing multiplyAll on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the product of the array:");
-    //     System.out.println(multiplyAll(array));
-    // }
+    public static void test_multiplyAll(int[] array){
+        System.out.println("Testing multiplyAll on the following array");
+        printArray(array);
+        System.out.println("The result of the product of the array:");
+        System.out.println(multiplyAll(array));
+    }
 
     /**
      * finds average of all elements within an array
@@ -156,16 +156,16 @@ public class MyArray2{
         return(addAll(array)/array.length);//calls addAll to  get sum of all elements and divides by length of array
     }
 
-    // /**
+    /**
     //  * Tests the average function
     //  * @param array array to be averaged
     //  */
-    // public static void test_findAverage(int[] array){
-    //     System.out.println("Testing average on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the average of the array:");
-    //     System.out.println(findAverage(array));
-    // }
+    public static void test_findAverage(int[] array){
+        System.out.println("Testing average on the following array");
+        printArray(array);
+        System.out.println("The result of the average of the array:");
+        System.out.println(findAverage(array));
+    }
 
     /**
      * swap two elements within an araay in-place
@@ -185,14 +185,14 @@ public class MyArray2{
      * @param index1 index of first element to be swapped
      * @param index2 index of second element to be swapped
      */
-    // public static void test_swap(int[] array, int index1, int index2){
-    //     System.out.println("Testing swap on the following array");
-    //     printArray(array);
-    //     System.out.println("Swapping index "+index1+" with index "+index2);
-    //     swap(array, index1, index2);
-    //     System.out.println("The result of the swap:");
-    //     printArray(array);
-    // }
+    public static void test_swap(int[] array, int index1, int index2){
+        System.out.println("Testing swap on the following array");
+        printArray(array);
+        System.out.println("Swapping index "+index1+" with index "+index2);
+        swap(array, index1, index2);
+        System.out.println("The result of the swap:");
+        printArray(array);
+    }
 
     /**
      * checks if an array contains a value
@@ -213,15 +213,15 @@ public class MyArray2{
      * Tests the isElement function
      * @param array array to be checked
      */
-    // public static void test_isElement(int[] array){
-    //     int value = array[0];
-    //     System.out.println("Testing isElement on the following array");
-    //     printArray(array);
-    //     System.out.println("Testing isElement on value: "+ value);
-    //     System.out.println("Result from isElement: " + isElement(array,value));
-    //     System.out.println("Testing isElement on value: "+ "1000");
-    //     System.out.println("Result from isElement: "+isElement(array, 1000));
-    // }
+    public static void test_isElement(int[] array){
+        int value = array[0];
+        System.out.println("Testing isElement on the following array");
+        printArray(array);
+        System.out.println("Testing isElement on value: "+ value);
+        System.out.println("Result from isElement: " + isElement(array,value));
+        System.out.println("Testing isElement on value: "+ "1000");
+        System.out.println("Result from isElement: "+isElement(array, 1000));
+    }
 
     /**
      * finds the index of a value in an array
@@ -242,15 +242,15 @@ public class MyArray2{
      * Tests the indexOf function
      * @param array array to be checked
      */
-    // public static void test_indexOf(int[] array){
-    //     int element = array[0];
-    //     System.out.println("Testing indexOf on the following array");
-    //     printArray(array);
-    //     System.out.println("Testing indexOf on element: "+ element);
-    //     System.out.println("Result from indexOf: " + indexOf(array,element));
-    //     System.out.println("Testing indexOf on element: "+ "1000");
-    //     System.out.println("Result from indexOf: "+indexOf(array, 1000));
-    // }
+    public static void test_indexOf(int[] array){
+        int element = array[0];
+        System.out.println("Testing indexOf on the following array");
+        printArray(array);
+        System.out.println("Testing indexOf on element: "+ element);
+        System.out.println("Result from indexOf: " + indexOf(array,element));
+        System.out.println("Testing indexOf on element: "+ "1000");
+        System.out.println("Result from indexOf: "+indexOf(array, 1000));
+    }
 
     /**
      * finds the smallest element in an array
@@ -271,12 +271,12 @@ public class MyArray2{
      * Tests the findMin function
      * @param array array to be checked
      */
-    // public static void test_findMin(int[] array){
-    //     System.out.println("Testing findMin on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the smallest element in the array:");
-    //     System.out.println(findMin(array));
-    // }
+    public static void test_findMin(int[] array){
+        System.out.println("Testing findMin on the following array");
+        printArray(array);
+        System.out.println("The result of the smallest element in the array:");
+        System.out.println(findMin(array));
+    }
 
     /**
      * finds the index of the smallest element in an array
@@ -299,12 +299,12 @@ public class MyArray2{
      * Tests the findMinIndex function
      * @param array array to be checked
      */
-    // public static void test_findMinIndex(int[] array){
-    //     System.out.println("Testing findMinIndex on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the index of the smallest element in the array:");
-    //     System.out.println(findMinIndex(array));
-    // }
+    public static void test_findMinIndex(int[] array){
+        System.out.println("Testing findMinIndex on the following array");
+        printArray(array);
+        System.out.println("The result of the index of the smallest element in the array:");
+        System.out.println(findMinIndex(array));
+    }
 
     /**
      * finds the largest element in an array
@@ -325,12 +325,12 @@ public class MyArray2{
      * Tests the findMax function
      * @param array array to be checked
      */
-    // public static void test_findMax(int[] array){
-    //     System.out.println("Testing findMax on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the largest element in the array:");
-    //     System.out.println(findMax(array));
-    // }
+    public static void test_findMax(int[] array){
+        System.out.println("Testing findMax on the following array");
+        printArray(array);
+        System.out.println("The result of the largest element in the array:");
+        System.out.println(findMax(array));
+    }
 
     /**
      * finds the index of the largest element in an array
@@ -353,12 +353,12 @@ public class MyArray2{
      * Tests the findMaxIndex function
      * @param array array to be checked
      */
-    // public static void test_findMaxIndex(int[] array){
-    //     System.out.println("Testing findMaxIndex on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the index of the largest element in the array:");
-    //     System.out.println(findMaxIndex(array));
-    // }
+    public static void test_findMaxIndex(int[] array){
+        System.out.println("Testing findMaxIndex on the following array");
+        printArray(array);
+        System.out.println("The result of the index of the largest element in the array:");
+        System.out.println(findMaxIndex(array));
+    }
 
     /**
      * reverse an array in-place
@@ -374,13 +374,13 @@ public class MyArray2{
      * Tests the reverseInPlace function
      * @param array array to be reversed
      */
-    // public static void test_reverse(int[] array){
-    //     System.out.println("Testing reverse on the following array");
-    //     printArray(array);
-    //     reverse(array);
-    //     System.out.println("The result of the array after reversing it:");
-    //     printArray(array);
-    // }
+    public static void test_reverse(int[] array){
+        System.out.println("Testing reverse on the following array");
+        printArray(array);
+        reverse(array);
+        System.out.println("The result of the array after reversing it:");
+        printArray(array);
+    }
 
     /**
      * reverse an array out of place
@@ -399,12 +399,12 @@ public class MyArray2{
      * Tests the reverse function
      * @param array array to be reversed
      */
-    // public static void test_returnReverse(int[] array){
-    //     System.out.println("Testing returnReverse on the following array");
-    //     printArray(array);
-    //     System.out.println("The result of the reversed array:");
-    //     printArray(returnReverse(array));
-    // }
+    public static void test_returnReverse(int[] array){
+        System.out.println("Testing returnReverse on the following array");
+        printArray(array);
+        System.out.println("The result of the reversed array:");
+        printArray(returnReverse(array));
+    }
 
     /**
      * finds element that intersect between two arrays
@@ -425,7 +425,7 @@ public class MyArray2{
                 }
             }
         }
-        if(isElement(array1, 0)==true||isElement(array2,0)==true){
+        if((isElement(array1, 0)==true)||(isElement(array2,0)==true)){
             temp[count] = 0;
             count++;
         }
@@ -441,13 +441,13 @@ public class MyArray2{
      * @param array1 first array to be checked
      * @param array2 second array to be checked
      */
-    // public static void test_intersection(int[] array1, int[] array2){
-    //     System.out.println("Testing intersect on the following arrays");
-    //     printArray(array1);
-    //     printArray(array2);
-    //     System.out.println("The result of the intersecting elements between the two arrays:");
-    //     printArray(intersection(array1, array2));
-    // }
+    public static void test_intersection(int[] array1, int[] array2){
+        System.out.println("Testing intersect on the following arrays");
+        printArray(array1);
+        printArray(array2);
+        System.out.println("The result of the intersecting elements between the two arrays:");
+        printArray(intersection(array1, array2));
+    }
 
     /**
      * finds the union of two arrays
@@ -471,7 +471,7 @@ public class MyArray2{
             }
         }
         if(isElement(array1, 0)==true||isElement(array2,0)==true){
-            temp[count] = 0;
+            union[count] = 0;
             count++;
         }
         int[] union2 = new int[count];
@@ -486,13 +486,13 @@ public class MyArray2{
      * @param array1 first array to be checked
      * @param array2 second array to be checked
      */
-    // public static void test_union(int[] array1, int[] array2){
-    //     System.out.println("Testing union on the following arrays");
-    //     printArray(array1);
-    //     printArray(array2);
-    //     System.out.println("The result of the union of the two arrays:");
-    //     printArray(union(array1, array2));
-    // }
+    public static void test_union(int[] array1, int[] array2){
+        System.out.println("Testing union on the following arrays");
+        printArray(array1);
+        printArray(array2);
+        System.out.println("The result of the union of the two arrays:");
+        printArray(union(array1, array2));
+    }
 
     /**
      * sorts an array in ascending order in-place
@@ -512,13 +512,13 @@ public class MyArray2{
      * Tests the sort function
      * @param array array to be sorted
      */
-    // public static void test_sort(int[] array){
-    //     System.out.println("Testing sort on the following array");
-    //     printArray(array);
-    //     sort(array);
-    //     System.out.println("The result of the sorted array:");
-    //     printArray(array);
-    // }
+    public static void test_sort(int[] array){
+        System.out.println("Testing sort on the following array");
+        printArray(array);
+        sort(array);
+        System.out.println("The result of the sorted array:");
+        printArray(array);
+    }
     
 
     //Main Function
